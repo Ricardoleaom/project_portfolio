@@ -101,12 +101,24 @@
           }
         });
       },
-      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0, rootMargin: '0px 0px -8px 0px' }
     );
 
     revealEls.forEach(function (el, index) {
       el.style.transitionDelay = Math.min(index % 4, 3) * 0.08 + 's';
       revealObserver.observe(el);
+    });
+
+    /* Hero CTAs can sit near the fold; force-visible on load if already in view */
+    requestAnimationFrame(function () {
+      revealEls.forEach(function (el) {
+        var rect = el.getBoundingClientRect();
+        var inView = rect.top < window.innerHeight && rect.bottom > 0;
+        if (inView) {
+          el.classList.add('is-visible');
+          revealObserver.unobserve(el);
+        }
+      });
     });
   }
 

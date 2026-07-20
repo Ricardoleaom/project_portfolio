@@ -360,9 +360,9 @@ button:focus-visible {
 .hero {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   min-height: calc(100dvh - 72px);
-  padding-top: clamp(0.75rem, 2vh, 1.5rem);
+  padding-top: clamp(1.5rem, 4vh, 2.5rem);
   padding-bottom: clamp(2rem, 5vh, 3.5rem);
   overflow: hidden;
 }
@@ -440,7 +440,6 @@ button:focus-visible {
 
 @media (max-height: 780px) {
   .hero {
-    align-items: flex-start;
     padding-top: 1rem;
     padding-bottom: 2rem;
   }
