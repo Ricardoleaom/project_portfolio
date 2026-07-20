@@ -361,15 +361,18 @@ button:focus-visible {
   position: relative;
   display: flex;
   align-items: flex-start;
-  min-height: calc(100dvh - 72px);
-  padding-top: clamp(1.5rem, 4vh, 2.5rem);
-  padding-bottom: clamp(2rem, 5vh, 3.5rem);
-  overflow: hidden;
+  /* Preenche a 1ª tela sem cortar o conteúdo (min, não max) */
+  min-height: calc(100svh - 72px);
+  padding-top: clamp(1rem, 2.5vh, 1.75rem);
+  padding-bottom: clamp(1.5rem, 4vh, 2.5rem);
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 .hero__grid {
   position: absolute;
   inset: 0;
+  overflow: hidden;
   background-image:
     linear-gradient(var(--color-border) 1px, transparent 1px),
     linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
@@ -377,6 +380,7 @@ button:focus-visible {
   opacity: 0.25;
   mask-image: linear-gradient(to bottom, black, transparent 85%);
   -webkit-mask-image: linear-gradient(to bottom, black, transparent 85%);
+  pointer-events: none;
 }
 
 .hero__glow {
@@ -400,22 +404,22 @@ button:focus-visible {
 }
 
 .hero__headline {
-  font-size: clamp(1.875rem, 1.4rem + 2vw, 2.75rem);
+  font-size: clamp(1.75rem, 1.35rem + 1.8vw, 2.5rem);
   line-height: 1.15;
   letter-spacing: -0.02em;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .hero__subtext {
-  font-size: 1rem;
-  line-height: 1.55;
+  font-size: 0.9875rem;
+  line-height: 1.5;
   max-width: 58ch;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .cert-badge {
   display: inline-block;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   transition: transform var(--duration-fast) var(--ease-standard),
               opacity var(--duration-fast) var(--ease-standard);
 }
@@ -427,7 +431,7 @@ button:focus-visible {
 
 .cert-badge img {
   display: block;
-  width: 80px;
+  width: 72px;
   height: auto;
   filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.45));
 }
@@ -438,31 +442,33 @@ button:focus-visible {
   gap: 12px;
 }
 
-@media (max-height: 780px) {
+/* Telas baixas: compacta tipografia/espaços para caber CTAs na 1ª dobra */
+@media (max-height: 820px) {
   .hero {
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+    padding-top: 0.875rem;
+    padding-bottom: 1.5rem;
   }
 
   .hero__headline {
-    font-size: clamp(1.75rem, 1.3rem + 1.5vw, 2.25rem);
+    font-size: clamp(1.625rem, 1.25rem + 1.4vw, 2.125rem);
+    margin-bottom: 8px;
   }
 
   .hero__subtext {
     font-size: 0.9375rem;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .cert-badge {
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
 
   .cert-badge img {
-    width: 68px;
+    width: 64px;
   }
 }
 
-@supports not (height: 100dvh) {
+@supports not (height: 100svh) {
   .hero {
     min-height: calc(100vh - 72px);
   }
