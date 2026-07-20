@@ -135,12 +135,13 @@ h1, h2, h3 {
 }
 
 .section {
-  padding-block: 64px;
+  padding-block: 80px;
+  border-top: 1px solid var(--color-border);
 }
 
 @media (min-width: 1024px) {
   .section {
-    padding-block: 96px;
+    padding-block: 112px;
   }
 }
 
@@ -358,7 +359,10 @@ button:focus-visible {
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  padding-top: clamp(1.5rem, 4vh, 3rem);
+  display: flex;
+  align-items: center;
+  min-height: calc(100dvh - 72px);
+  padding-top: clamp(0.75rem, 2vh, 1.5rem);
   padding-bottom: clamp(2rem, 5vh, 3.5rem);
   overflow: hidden;
 }
@@ -388,6 +392,7 @@ button:focus-visible {
 .hero__content {
   position: relative;
   max-width: 760px;
+  width: 100%;
 }
 
 .hero__content .eyebrow {
@@ -435,7 +440,8 @@ button:focus-visible {
 
 @media (max-height: 780px) {
   .hero {
-    padding-top: 1.25rem;
+    align-items: flex-start;
+    padding-top: 1rem;
     padding-bottom: 2rem;
   }
 
@@ -454,6 +460,12 @@ button:focus-visible {
 
   .cert-badge img {
     width: 68px;
+  }
+}
+
+@supports not (height: 100dvh) {
+  .hero {
+    min-height: calc(100vh - 72px);
   }
 }
 
