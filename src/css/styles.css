@@ -1043,8 +1043,13 @@ a.about__meta-item:hover {
   margin-bottom: 8px;
 }
 
-.case-metrics p {
+.case-metrics__note {
+  display: block;
+  margin-top: 8px;
   font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
   color: var(--color-text-muted);
   max-width: 22ch;
 }
@@ -1147,8 +1152,9 @@ a.about__meta-item:hover {
 }
 
 .lightbox {
-  position: relative;
-  width: min(1120px, calc(100vw - 32px));
+  /* No position here: the UA already fixes dialog:modal, and overriding it
+     breaks the vertical centring that `margin: auto` relies on. */
+  width: min(1024px, calc(100vw - 32px)); /* screenshots' natural width — no upscaling */
   max-width: 100%;
   max-height: calc(100vh - 32px);
   margin: auto;

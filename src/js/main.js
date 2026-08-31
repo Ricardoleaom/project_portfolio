@@ -131,10 +131,6 @@
   function closeLightbox() {
     if (!lightbox || !lightbox.open) return;
     lightbox.close();
-    if (lightboxImg) {
-      lightboxImg.removeAttribute('src');
-      lightboxImg.alt = '';
-    }
   }
 
   if (lightbox && lightboxImg) {
@@ -161,6 +157,12 @@
       if (event.target === lightbox) {
         closeLightbox();
       }
+    });
+
+    /* Esc closes the dialog natively, so clear the image on 'close' itself */
+    lightbox.addEventListener('close', function () {
+      lightboxImg.removeAttribute('src');
+      lightboxImg.alt = '';
     });
   }
 
