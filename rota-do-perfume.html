@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rota do Perfume | Ricardo Leão</title>
+  <meta name="description" content="Estudo de caso: lakehouse na Databricks do CSV sujo até o app que o diretor usa para decidir quem ligar na segunda-feira. Conversão real de 41,7% contra 10,1% ligando às cegas.">
+  <meta name="author" content="Ricardo Leão">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="theme-color" content="#0A0A0A">
+  <link rel="canonical" href="https://ricardoleaom.github.io/project_portfolio/rota-do-perfume.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Ricardo Leão">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://ricardoleaom.github.io/project_portfolio/rota-do-perfume.html">
+  <meta property="og:title" content="Rota do Perfume | Estudo de caso Databricks — Ricardo Leão">
+  <meta property="og:description" content="Estudo de caso: lakehouse na Databricks do CSV sujo até o app que o diretor usa para decidir quem ligar na segunda-feira. Conversão real de 41,7% contra 10,1% ligando às cegas.">
+  <meta property="og:image" content="https://ricardoleaom.github.io/project_portfolio/src/assets/og-rota-do-perfume.png?v=20260831">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Cartão do estudo de caso Rota do Perfume: lakehouse na Databricks com 41,7% de conversão na fila priorizada.">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rota do Perfume | Estudo de caso Databricks — Ricardo Leão">
+  <meta name="twitter:description" content="Estudo de caso: lakehouse na Databricks do CSV sujo até o app que o diretor usa para decidir quem ligar na segunda-feira. Conversão real de 41,7% contra 10,1% ligando às cegas.">
+  <meta name="twitter:image" content="https://ricardoleaom.github.io/project_portfolio/src/assets/og-rota-do-perfume.png?v=20260831">
+  <meta name="twitter:image:alt" content="Cartão do estudo de caso Rota do Perfume: lakehouse na Databricks com 41,7% de conversão na fila priorizada.">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230A0A0A'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' fill='%2310B981' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+
+  <link rel="stylesheet" href="src/css/styles.css?v=20260831">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Rota do Perfume — do CSV sujo ao app que decide quem ligar",
+    "description": "Estudo de caso: lakehouse na Databricks do CSV sujo até o app que o diretor usa para decidir quem ligar na segunda-feira. Conversão real de 41,7% contra 10,1% ligando às cegas.",
+    "image": "https://ricardoleaom.github.io/project_portfolio/src/assets/og-rota-do-perfume.png",
+    "inLanguage": "pt-BR",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://ricardoleaom.github.io/project_portfolio/rota-do-perfume.html" },
+    "author": { "@id": "https://ricardoleaom.github.io/project_portfolio/#ricardo-leao" },
+    "publisher": { "@id": "https://ricardoleaom.github.io/project_portfolio/#ricardo-leao" },
+    "about": ["Databricks", "Lakehouse", "Engenharia de Dados", "Análise de Dados"]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://ricardoleaom.github.io/project_portfolio/" },
+      { "@type": "ListItem", "position": 2, "name": "Rota do Perfume", "item": "https://ricardoleaom.github.io/project_portfolio/rota-do-perfume.html" }
+    ]
+  }
+  </script>
+</head>
+<body data-page="case">
+  <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo</a>
+
+  <div class="scroll-sentinel" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+      <a href="index.html" class="brand">Ricardo<span class="brand__dot">.</span>Leão</a>
+
+      <nav class="nav" id="nav-principal" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a href="index.html#tecnologias" class="nav__link">Tecnologias</a></li>
+          <li><a href="index.html#projetos" class="nav__link is-active" aria-current="true">Projetos</a></li>
+          <li><a href="index.html#sobre" class="nav__link">Sobre</a></li>
+          <li><a href="index.html#formacao" class="nav__link">Formação</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <a href="https://wa.me/5531984129779" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Contato</a>
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menu de navegação">
+          <i class="ph ph-list" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+
+    <section class="case-hero">
+      <div class="container">
+        <p class="eyebrow reveal">Estudo de caso</p>
+        <h1 class="case-hero__title reveal">Rota do Perfume</h1>
+        <p class="case-hero__lead reveal">Lakehouse na Databricks que transforma 10 CSVs de ERP e CRM numa fila semanal de 200 ligações, com o diretor na tela.</p>
+        <p class="case-hero__note reveal">Distribuidora fictícia. Dados gerados para o estudo, no formato que aparece em empresa real.</p>
+        <div class="hero__actions reveal">
+          <a href="https://github.com/Ricardoleaom/LakehousePerfumes" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+            <i class="ph ph-github-logo" aria-hidden="true"></i>
+            Código no GitHub
+          </a>
+          <a href="index.html#projetos" class="btn btn--secondary">
+            Voltar aos projetos
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <dl class="case-metrics reveal">
+        <div class="case-metrics__item">
+          <dt>Fila da semana</dt>
+          <dd>200</dd>
+          <p>contatos recomendados pelo modelo, para 36 vendedores</p>
+        </div>
+        <div class="case-metrics__item">
+          <dt>Conversão real</dt>
+          <dd>41,7%</dd>
+          <p>5 pedidos em 12 ligações já trabalhadas</p>
+        </div>
+        <div class="case-metrics__item">
+          <dt>Ganho sobre o acaso</dt>
+          <dd>4,1x</dd>
+          <p>10,1% era a taxa ligando às cegas</p>
+        </div>
+        <div class="case-metrics__item">
+          <dt>Receita esperada</dt>
+          <dd>R$ 559 mil</dd>
+          <p>chance de compra vezes ticket médio</p>
+        </div>
+      </dl>
+    </div>
+
+    <section class="section case-section" id="problema">
+      <div class="container case-prose">
+        <h2 class="section-title reveal">O dado que existe em qualquer empresa</h2>
+        <p class="reveal">O ponto de partida foram 10 arquivos CSV de ERP e CRM, com mais de 300 mil linhas. Datas em dois formatos na mesma coluna. CNPJ com espaço. Duplicatas. O tipo de sujeira que quebra relatório e, pior, quebra decisão.</p>
+        <p class="reveal">A resposta foi um pipeline em camadas (raw, bronze, silver, gold), inteiro como código via Databricks Asset Bundles. Schemas, jobs, dashboard e os espaços do Genie são versionados e sobem no mesmo deploy.</p>
+      </div>
+    </section>
+
+    <section class="section case-section" id="decisoes">
+      <div class="container">
+        <h2 class="section-title reveal">Três decisões que eu defendo</h2>
+
+        <div class="case-decisions">
+          <article class="case-decision reveal">
+            <h3>A limpeza não pode mudar o negócio</h3>
+            <p>O faturamento de R$ 102 milhões fecha idêntico da bronze à gold. Testes de qualidade derrubam o pipeline quando algo diverge. A regra é corrigir a transformação, nunca o teste.</p>
+          </article>
+          <article class="case-decision reveal">
+            <h3>Metadado é contrato</h3>
+            <p>Toda coluna que uma IA consulta tem comentário de negócio auditado. Uma tarefa do job falha se faltar um. É isso que faz o Genie responder "quanto vale a fila?" com o número certo e a palavra "estimativa".</p>
+          </article>
+          <article class="case-decision reveal">
+            <h3>Dado vira ação</h3>
+            <p>Um modelo de propensão de compra (scikit-learn e MLflow, lift de 4x sobre uma fila aleatória) alimenta a fila da semana. O time registra o desfecho de cada contato no Databricks App em React. Na primeira semana, a conversão real ficou em 41,7%, contra 41,5% que o modelo previu.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section" id="app">
+      <div class="container">
+        <h2 class="section-title reveal">O app que o diretor usa na segunda</h2>
+        <p class="case-prose__lead reveal">Três telas. A semana (quem ligar), o acompanhamento (se o modelo se confirma) e o perguntar (Genie com a permissão do usuário no Unity Catalog).</p>
+
+        <div class="case-gallery">
+          <figure class="case-shot case-shot--wide reveal">
+            <button type="button" class="case-shot__trigger" data-lightbox="src/assets/rota-do-perfume/semana.png" data-lightbox-alt="App Rota do Perfume na aba A semana, com KPIs da fila e a tabela de clientes a ligar">
+              <img src="src/assets/rota-do-perfume/semana.png" alt="App Rota do Perfume na aba A semana, com KPIs da fila e a tabela de clientes a ligar" loading="lazy">
+            </button>
+            <figcaption>
+              <strong>A semana.</strong> 200 contatos, receita esperada de R$ 559 mil, conversão prevista de 42% contra 10,1% ligando às cegas. A fila traz chance, motivo da ligação, o que oferecer (com estoque) e o registro do desfecho: vendeu, vai pensar, sem interesse, não atendeu.
+            </figcaption>
+          </figure>
+
+          <figure class="case-shot reveal">
+            <button type="button" class="case-shot__trigger" data-lightbox="src/assets/rota-do-perfume/acompanhamento.png" data-lightbox-alt="Aba Acompanhamento com conversão real de 41,7% contra 41,5% prevista pelo modelo e 10,1% ligando às cegas">
+              <img src="src/assets/rota-do-perfume/acompanhamento.png" alt="Aba Acompanhamento com conversão real de 41,7% contra 41,5% prevista pelo modelo e 10,1% ligando às cegas" loading="lazy">
+            </button>
+            <figcaption>
+              <strong>O modelo está se confirmando?</strong> 41,7% real, 41,5% previsto, 10,1% baseline. A amostra ainda é pequena (intervalo de confiança de 19,3% a 68,0%). O painel trata o alinhamento como sinal, não como prova fechada.
+            </figcaption>
+          </figure>
+
+          <figure class="case-shot reveal">
+            <button type="button" class="case-shot__trigger" data-lightbox="src/assets/rota-do-perfume/acompanhamento-vendedores.png" data-lightbox-alt="Gráfico de barras com fila versus ligações trabalhadas por vendedor e tabela de desfecho">
+              <img src="src/assets/rota-do-perfume/acompanhamento-vendedores.png" alt="Gráfico de barras com fila versus ligações trabalhadas por vendedor e tabela de desfecho" loading="lazy">
+            </button>
+            <figcaption>
+              <strong>Quem tem carteira grande está trabalhando ela?</strong> Os 12 vendedores com mais contatos na fila, lado a lado com o que já foi ligado. O agrupamento é por ID, não só por nome, para não colidir homônimos.
+            </figcaption>
+          </figure>
+
+          <figure class="case-shot case-shot--wide reveal">
+            <button type="button" class="case-shot__trigger" data-lightbox="src/assets/rota-do-perfume/perguntar.png" data-lightbox-alt="Aba Perguntar do app, com o Genie listando os cinco próximos clientes a ligar">
+              <img src="src/assets/rota-do-perfume/perguntar.png" alt="Aba Perguntar do app, com o Genie listando os cinco próximos clientes a ligar" loading="lazy">
+            </button>
+            <figcaption>
+              <strong>Perguntar.</strong> Linguagem natural sobre a fila, o modelo e os clientes. A consulta roda com as permissões do Unity Catalog de quem pergunta. O SQL gerado fica visível para conferência antes de levar o número para a reunião.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section" id="genie">
+      <div class="container">
+        <h2 class="section-title reveal">Genie no workspace, não só no app</h2>
+        <p class="case-prose__lead reveal">O mesmo contrato de metadado responde fora do app, no espaço Genie do Databricks. A pergunta de negócio vira número conferível.</p>
+
+        <div class="case-gallery">
+          <figure class="case-shot reveal">
+            <button type="button" class="case-shot__trigger" data-lightbox="src/assets/rota-do-perfume/genie-ligacoes.png" data-lightbox-alt="Genie no Databricks respondendo quantas ligações foram registradas e quantas viraram pedido">
+              <img src="src/assets/rota-do-perfume/genie-ligacoes.png" alt="Genie no Databricks respondendo quantas ligações foram registradas e quantas viraram pedido" loading="lazy">
+            </button>
+            <figcaption>
+              <strong>Quantas ligações já foram registradas?</strong> 12 ligações, 5 viraram pedido, 41,67% de conversão, com a distribuição por status (vendeu, não atendeu, vai pensar, sem interesse).
+            </figcaption>
+          </figure>
+
+          <figure class="case-shot reveal">
+            <button type="button" class="case-shot__trigger" data-lightbox="src/assets/rota-do-perfume/genie-vendedor.png" data-lightbox-alt="Genie no Databricks mostrando Débora Souza como a vendedora que mais ligou, com 4 chamadas">
+              <img src="src/assets/rota-do-perfume/genie-vendedor.png" alt="Genie no Databricks mostrando Débora Souza como a vendedora que mais ligou, com 4 chamadas" loading="lazy">
+            </button>
+            <figcaption>
+              <strong>Qual vendedor mais ligou até agora?</strong> Débora Souza, com 4 ligações registradas. O gráfico compara com Henrique Oliveira (3). A pergunta de gestão cai no mesmo dado da fila.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section" id="deploy">
+      <div class="container">
+        <h2 class="section-title reveal">Deploy como código, app no ar</h2>
+        <p class="case-prose__lead reveal">O app <span class="case-mono">rotaperfume-direcao</span> sobe via Databricks Asset Bundles. Warehouse serverless, espaço Genie e o React compartilham o mesmo pacote.</p>
+
+        <div class="case-gallery">
+          <figure class="case-shot reveal">
+            <button type="button" class="case-shot__trigger" data-lightbox="src/assets/rota-do-perfume/overview.png" data-lightbox-alt="Overview do Databricks App rotaperfume-direcao em execução, com warehouse serverless e espaço Genie ligados">
+              <img src="src/assets/rota-do-perfume/overview.png" alt="Overview do Databricks App rotaperfume-direcao em execução, com warehouse serverless e espaço Genie ligados" loading="lazy">
+            </button>
+            <figcaption>
+              <strong>Overview.</strong> App em execução, compute ativo, origem em <span class="case-mono">.bundle</span>. Recursos ligados: SQL Warehouse serverless e o espaço Genie Rota do Perfume - Direção.
+            </figcaption>
+          </figure>
+
+          <figure class="case-shot reveal">
+            <button type="button" class="case-shot__trigger" data-lightbox="src/assets/rota-do-perfume/insights.png" data-lightbox-alt="Aba Insights do Databricks App com 100% de uptime e zero incidentes nos últimos sete dias">
+              <img src="src/assets/rota-do-perfume/insights.png" alt="Aba Insights do Databricks App com 100% de uptime e zero incidentes nos últimos sete dias" loading="lazy">
+            </button>
+            <figcaption>
+              <strong>Insights.</strong> 100% de uptime no período, zero incidentes. Observabilidade do app no mesmo workspace em que o dado vive.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section" id="proximos">
+      <div class="container case-prose">
+        <h2 class="section-title reveal">O que vem a seguir</h2>
+        <p class="reveal">O projeto segue em evolução. Os próximos passos são extrair as transformações para módulos Python testáveis fora do notebook, e migrar o provisionamento da infraestrutura para Terraform, para o mesmo ambiente subir de forma reproduzível em qualquer workspace.</p>
+        <div class="hero__actions reveal">
+          <a href="https://github.com/Ricardoleaom/LakehousePerfumes" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+            <i class="ph ph-github-logo" aria-hidden="true"></i>
+            Código no GitHub
+          </a>
+          <a href="index.html#projetos" class="btn btn--secondary">Voltar aos projetos</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>&copy; <span id="ano-atual">2026</span> Ricardo Leão. Todos os direitos reservados.</p>
+      <div class="site-footer__socials">
+        <a href="https://www.linkedin.com/in/ricardo-leao-machado/" target="_blank" rel="noopener noreferrer">
+          <i class="ph ph-linkedin-logo" aria-hidden="true"></i>
+          LinkedIn
+        </a>
+        <a href="https://github.com/Ricardoleaom" target="_blank" rel="noopener noreferrer">
+          <i class="ph ph-github-logo" aria-hidden="true"></i>
+          GitHub
+        </a>
+        <a href="mailto:ricardoleaom@gmail.com">
+          <i class="ph ph-envelope-simple" aria-hidden="true"></i>
+          Email
+        </a>
+        <a href="https://wa.me/5531984129779" target="_blank" rel="noopener noreferrer">
+          <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Imagem ampliada">
+    <button type="button" class="lightbox__close" data-lightbox-close aria-label="Fechar imagem">
+      <i class="ph ph-x" aria-hidden="true"></i>
+    </button>
+    <img class="lightbox__img" alt="">
+  </dialog>
+
+  <script src="src/js/main.js?v=20260831"></script>
+</body>
+</html>

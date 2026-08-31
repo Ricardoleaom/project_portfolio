@@ -123,12 +123,60 @@
   }
 
   /* ---------------------------------------------------------------
+   * Lightbox for case-study screenshots
+   * ------------------------------------------------------------- */
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = lightbox ? lightbox.querySelector('.lightbox__img') : null;
+
+  function closeLightbox() {
+    if (!lightbox || !lightbox.open) return;
+    lightbox.close();
+    if (lightboxImg) {
+      lightboxImg.removeAttribute('src');
+      lightboxImg.alt = '';
+    }
+  }
+
+  if (lightbox && lightboxImg) {
+    document.querySelectorAll('[data-lightbox]').forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        var src = trigger.getAttribute('data-lightbox');
+        var alt =
+          trigger.getAttribute('data-lightbox-alt') ||
+          (trigger.querySelector('img') && trigger.querySelector('img').alt) ||
+          '';
+        lightboxImg.src = src;
+        lightboxImg.alt = alt;
+        if (typeof lightbox.showModal === 'function') {
+          lightbox.showModal();
+        }
+      });
+    });
+
+    lightbox.querySelectorAll('[data-lightbox-close]').forEach(function (btn) {
+      btn.addEventListener('click', closeLightbox);
+    });
+
+    lightbox.addEventListener('click', function (event) {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+  }
+
+  /* ---------------------------------------------------------------
    * Active nav link tracking based on section visibility
    * ------------------------------------------------------------- */
   var sections = document.querySelectorAll('main section[id]');
   var navLinks = document.querySelectorAll('.nav__link');
+  var isCasePage = document.body.getAttribute('data-page') === 'case';
 
-  if (sections.length && navLinks.length && 'IntersectionObserver' in window) {
+  if (
+    !isCasePage &&
+    sections.length &&
+    navLinks.length &&
+    'IntersectionObserver' in window
+  ) {
     var sectionObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
