@@ -1,0 +1,27 @@
+# Histórico do git: 14 MB e o repositório inteiro dentro da imagem
+.git
+.gitignore
+.gitattributes
+
+# Documentos de projeto, não fazem parte do site
+DESIGN.md
+PRD.md
+screen.png
+
+# Editor e sistema operacional
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Dependências e logs
+node_modules
+*.log
+
+# Segredos
+.env
+.env.*
+
+# nginx.conf é copiado para conf.d pelo Dockerfile e não deve ficar no webroot,
+# mas precisa continuar no contexto de build — o bloqueio é feito no nginx.conf.

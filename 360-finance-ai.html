@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>360Finance AI | Ricardo Leão</title>
+  <meta name="description" content="Estudo de caso: SaaS financeiro com Next.js, Clerk, Stripe e Prisma. Webhook de pagamento atualiza a assinatura em tempo real; o relatório de IA só analisa o que está no banco.">
+  <meta name="author" content="Ricardo Leão">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="theme-color" content="#0A0A0A">
+  <link rel="canonical" href="https://ricardoleaom.github.io/project_portfolio/360-finance-ai.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Ricardo Leão">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://ricardoleaom.github.io/project_portfolio/360-finance-ai.html">
+  <meta property="og:title" content="360Finance AI | SaaS financeiro ponta a ponta - Ricardo Leão">
+  <meta property="og:description" content="Estudo de caso: SaaS financeiro com Next.js, Clerk, Stripe e Prisma. Webhook de pagamento atualiza a assinatura em tempo real; o relatório de IA só analisa o que está no banco.">
+  <meta property="og:image" content="https://ricardoleaom.github.io/project_portfolio/src/assets/og-360-finance-ai.png?v=20260901">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dashboard do 360Finance AI com saldo, receitas, despesas e relatório de IA.">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="360Finance AI | SaaS financeiro ponta a ponta - Ricardo Leão">
+  <meta name="twitter:description" content="Estudo de caso: SaaS financeiro com Next.js, Clerk, Stripe e Prisma. Webhook de pagamento atualiza a assinatura em tempo real; o relatório de IA só analisa o que está no banco.">
+  <meta name="twitter:image" content="https://ricardoleaom.github.io/project_portfolio/src/assets/og-360-finance-ai.png?v=20260901">
+  <meta name="twitter:image:alt" content="Dashboard do 360Finance AI com saldo, receitas, despesas e relatório de IA.">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230A0A0A'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' fill='%2310B981' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+
+  <link rel="stylesheet" href="src/css/styles.css?v=20260901">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "360Finance AI - do localhost a um SaaS com auth, pagamento e IA",
+    "description": "Estudo de caso: SaaS financeiro com Next.js, Clerk, Stripe e Prisma. Webhook de pagamento atualiza a assinatura em tempo real; o relatório de IA só analisa o que está no banco.",
+    "image": "https://ricardoleaom.github.io/project_portfolio/src/assets/og-360-finance-ai.png",
+    "inLanguage": "pt-BR",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://ricardoleaom.github.io/project_portfolio/360-finance-ai.html" },
+    "author": { "@id": "https://ricardoleaom.github.io/project_portfolio/#ricardo-leao" },
+    "publisher": { "@id": "https://ricardoleaom.github.io/project_portfolio/#ricardo-leao" },
+    "about": ["Next.js", "SaaS", "Stripe", "PostgreSQL", "TypeScript"]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://ricardoleaom.github.io/project_portfolio/" },
+      { "@type": "ListItem", "position": 2, "name": "360Finance AI", "item": "https://ricardoleaom.github.io/project_portfolio/360-finance-ai.html" }
+    ]
+  }
+  </script>
+</head>
+<body data-page="case">
+  <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo</a>
+
+  <div class="scroll-sentinel" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+      <a href="index.html" class="brand">Ricardo<span class="brand__dot">.</span>Leão</a>
+
+      <nav class="nav" id="nav-principal" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a href="index.html#tecnologias" class="nav__link">Tecnologias</a></li>
+          <li><a href="index.html#projetos" class="nav__link is-active" aria-current="true">Projetos</a></li>
+          <li><a href="index.html#sobre" class="nav__link">Sobre</a></li>
+          <li><a href="index.html#formacao" class="nav__link">Formação</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <a href="https://wa.me/5531984129779" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Contato</a>
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menu de navegação">
+          <i class="ph ph-list" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+
+    <section class="case-hero">
+      <div class="container">
+        <p class="eyebrow reveal">Estudo de caso</p>
+        <h1 class="case-hero__title reveal">360Finance AI</h1>
+        <p class="case-hero__lead reveal">SaaS financeiro em que autenticação, banco, pagamento e relatório de IA fecham o mesmo ciclo, fora do localhost.</p>
+        <p class="case-hero__note reveal">Projeto de estudo. Pagamentos em modo teste do Stripe. Ninguém é cobrado de verdade.</p>
+        <div class="hero__actions reveal">
+          <a href="https://360-finance-ai.vercel.app" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+            Ver demo
+            <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+          </a>
+          <a href="https://github.com/Ricardoleaom/360Finance_AI" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">
+            <i class="ph ph-github-logo" aria-hidden="true"></i>
+            Código no GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <dl class="case-metrics reveal">
+        <div class="case-metrics__item">
+          <dt>Produto</dt>
+          <dd>SaaS<span class="case-metrics__note">dashboard, transações e assinatura no mesmo app</span></dd>
+        </div>
+        <div class="case-metrics__item">
+          <dt>Auth e pagamento</dt>
+          <dd>Clerk + Stripe<span class="case-metrics__note">webhook invoice.paid atualiza o plano na hora</span></dd>
+        </div>
+        <div class="case-metrics__item">
+          <dt>Dados</dt>
+          <dd>Prisma + Neon<span class="case-metrics__note">PostgreSQL na nuvem, mutações em Server Actions</span></dd>
+        </div>
+        <div class="case-metrics__item">
+          <dt>IA</dt>
+          <dd>Sem invenção<span class="case-metrics__note">o relatório soma o que está no banco, não inventa lançamento</span></dd>
+        </div>
+      </dl>
+    </div>
+
+    <section class="section case-section" id="problema">
+      <div class="container case-prose">
+        <h2 class="section-title reveal">O que separa um CRUD de um produto</h2>
+        <p class="reveal">Quase sempre são os detalhes que só aparecem quando o projeto sai do localhost: autenticação, banco, pagamento, variável de ambiente e webhook de produção. Sem isso, a tela até funciona. O produto, não.</p>
+        <p class="reveal">Anos na área contábil me ensinaram que número não pode divergir. O 360Finance AI nasceu para amarrar essas pontas: Next.js 14 (App Router) e TypeScript, PostgreSQL na Neon com Prisma, interface na Vercel, login no Clerk e plano Premium no Stripe.</p>
+      </div>
+    </section>
+
+    <section class="section case-section" id="decisoes">
+      <div class="container">
+        <h2 class="section-title reveal">Três decisões que eu defendo</h2>
+
+        <div class="case-decisions">
+          <article class="case-decision reveal">
+            <h3>Mutação fica no servidor, com contrato</h3>
+            <p>Criar, editar e apagar passam por Server Actions, com validação estrita no Zod. O Decimal do Prisma não vaza para o client. Se o tipo não fecha, a transação não entra. É a mesma disciplina de um livro-razão: o lançamento só existe se a regra deixar.</p>
+          </article>
+          <article class="case-decision reveal">
+            <h3>O webhook é o contrato da assinatura</h3>
+            <p>O plano Premium (R$ 19/mês, modo teste) libera transações ilimitadas e o relatório de IA. A parte difícil não é o botão do Stripe. É o <span class="case-mono">invoice.paid</span> atualizar o <span class="case-mono">publicMetadata</span> do Clerk para a tela de assinatura mudar na hora, sem refresh manual nem dado inventado no front.</p>
+          </article>
+          <article class="case-decision reveal">
+            <h3>IA não inventa lançamento</h3>
+            <p>O relatório consome o banco, soma receitas, despesas e investimentos, e monta a análise em cima dos lançamentos reais do dashboard. Sem chave da OpenAI, o app mostra um markdown de exemplo. Com chave, o texto ainda parte do mesmo número que o usuário vê na tela.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section" id="produto">
+      <div class="container">
+        <h2 class="section-title reveal">O app que a pessoa usa no mês</h2>
+        <p class="case-prose__lead reveal">Dashboard com saldo e categorias, tabela de transações com CRUD e o formulário que grava no Postgres.</p>
+
+        <div class="case-gallery">
+          <figure class="case-shot case-shot--wide reveal">
+            <button type="button" class="case-shot__trigger" data-lightbox="src/assets/360-finance-ai/dashboard.png" data-lightbox-alt="Dashboard do finance.ai em setembro, com saldo de R$ 3.051, receitas, despesas e últimas transações">
+              <img src="src/assets/360-finance-ai/dashboard.png" alt="Dashboard do finance.ai em setembro, com saldo de R$ 3.051, receitas, despesas e últimas transações" loading="lazy">
+            </button>
+            <figcaption>
+              <strong>Dashboard.</strong> Saldo R$ 3.051, investido R$ 1.000, receita R$ 8.000, despesas R$ 3.949. Gráfico de composição, gastos por categoria e as últimas movimentações, filtrados por mês.
+            </figcaption>
+          </figure>
+
+          <figure class="case-shot reveal">
+            <button type="button" class="case-shot__trigger" data-lightbox="src/assets/360-finance-ai/transacoes.png" data-lightbox-alt="Tabela de transações com tipo, categoria, método, data, valor e ações de editar e apagar">
+              <img src="src/assets/360-finance-ai/transacoes.png" alt="Tabela de transações com tipo, categoria, método, data, valor e ações de editar e apagar" loading="lazy">
+            </button>
+            <figcaption>
+              <strong>Transações.</strong> Lista com tipo (despesa, depósito, investimento), categoria, método de pagamento e ações de editar e apagar. O CRUD que o recrutador espera ver funcionando, não só desenhado.
+            </figcaption>
+          </figure>
+
+          <figure class="case-shot reveal">
+            <button type="button" class="case-shot__trigger" data-lightbox="src/assets/360-finance-ai/adicionar.png" data-lightbox-alt="Modal Adicionar transação com nome, valor, tipo, categoria, método de pagamento e data">
+              <img src="src/assets/360-finance-ai/adicionar.png" alt="Modal Adicionar transação com nome, valor, tipo, categoria, método de pagamento e data" loading="lazy">
+            </button>
+            <figcaption>
+              <strong>Adicionar transação.</strong> Nome, valor, tipo, categoria, método e data. O mesmo contrato que o Zod valida no servidor antes de gravar no Prisma.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section" id="paywall">
+      <div class="container">
+        <h2 class="section-title reveal">Auth, pagamento e o que o plano libera</h2>
+        <p class="case-prose__lead reveal">Login no Clerk, checkout no Stripe, metadata de volta no usuário. A UI de assinatura e o botão de IA seguem esse estado, não um flag no front.</p>
+
+        <div class="case-gallery">
+          <figure class="case-shot reveal">
+            <button type="button" class="case-shot__trigger" data-lightbox="src/assets/360-finance-ai/login-clerk.png" data-lightbox-alt="Modal de login do Clerk no 360Finance AI, com Google e email">
+              <img src="src/assets/360-finance-ai/login-clerk.png" alt="Modal de login do Clerk no 360Finance AI, com Google e email" loading="lazy">
+            </button>
+            <figcaption>
+              <strong>Login.</strong> Clerk na frente: Google ou email. Sessão e metadata do plano ficam no mesmo provedor que o webhook atualiza.
+            </figcaption>
+          </figure>
+
+          <figure class="case-shot reveal">
+            <button type="button" class="case-shot__trigger" data-lightbox="src/assets/360-finance-ai/assinatura-basico.png" data-lightbox-alt="Página Assinatura com plano básico grátis e plano premium a R$ 19 por mês ainda não adquirido">
+              <img src="src/assets/360-finance-ai/assinatura-basico.png" alt="Página Assinatura com plano básico grátis e plano premium a R$ 19 por mês ainda não adquirido" loading="lazy">
+            </button>
+            <figcaption>
+              <strong>Antes de assinar.</strong> Básico grátis, 10 transações no mês, sem relatório de IA. Premium a R$ 19/mês, transações ilimitadas e IA.
+            </figcaption>
+          </figure>
+
+          <figure class="case-shot reveal">
+            <button type="button" class="case-shot__trigger" data-lightbox="src/assets/360-finance-ai/checkout-stripe.png" data-lightbox-alt="Checkout Stripe do plano Premium a R$ 19 por mês, powered by Stripe">
+              <img src="src/assets/360-finance-ai/checkout-stripe.png" alt="Checkout Stripe do plano Premium a R$ 19 por mês, powered by Stripe" loading="lazy">
+            </button>
+            <figcaption>
+              <strong>Checkout.</strong> Stripe Checkout do plano Premium. Modo teste: o cartão não cobra de verdade. O evento <span class="case-mono">invoice.paid</span> é o que importa no backend.
+            </figcaption>
+          </figure>
+
+          <figure class="case-shot reveal">
+            <button type="button" class="case-shot__trigger" data-lightbox="src/assets/360-finance-ai/assinatura-premium.png" data-lightbox-alt="Plano Premium ativo na tela de assinatura, com selo Ativo e link Gerenciar plano">
+              <img src="src/assets/360-finance-ai/assinatura-premium.png" alt="Plano Premium ativo na tela de assinatura, com selo Ativo e link Gerenciar plano" loading="lazy">
+            </button>
+            <figcaption>
+              <strong>Depois do webhook.</strong> Selo Ativo no Premium, transações ilimitadas e IA liberados. A tela mudou porque o Clerk recebeu o metadata, não porque o front chutou o estado.
+            </figcaption>
+          </figure>
+
+          <figure class="case-shot case-shot--wide reveal">
+            <button type="button" class="case-shot__trigger" data-lightbox="src/assets/360-finance-ai/ia-bloqueada.png" data-lightbox-alt="Modal pedindo plano premium para gerar o relatório de IA">
+              <img src="src/assets/360-finance-ai/ia-bloqueada.png" alt="Modal pedindo plano premium para gerar o relatório de IA" loading="lazy">
+            </button>
+            <figcaption>
+              <strong>Paywall da IA.</strong> Sem Premium, o relatório não gera. A regra vive no mesmo metadata da assinatura. Feature flag de marketing, neste caso, seria mentira.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section" id="ia">
+      <div class="container">
+        <h2 class="section-title reveal">O relatório parte do banco</h2>
+        <p class="case-prose__lead reveal">Com o plano ativo, a IA lê receitas, despesas e categorias do mês e devolve um texto conferível contra o dashboard.</p>
+
+        <div class="case-gallery">
+          <figure class="case-shot reveal">
+            <button type="button" class="case-shot__trigger" data-lightbox="src/assets/360-finance-ai/ia-gerar.png" data-lightbox-alt="Modal Relatório IA pedindo para gerar insights sobre as finanças do mês">
+              <img src="src/assets/360-finance-ai/ia-gerar.png" alt="Modal Relatório IA pedindo para gerar insights sobre as finanças do mês" loading="lazy">
+            </button>
+            <figcaption>
+              <strong>Gerar relatório.</strong> O gatilho é explícito. Não há texto mágico na tela antes de o backend consultar os lançamentos.
+            </figcaption>
+          </figure>
+
+          <figure class="case-shot reveal">
+            <button type="button" class="case-shot__trigger" data-lightbox="src/assets/360-finance-ai/ia-relatorio.png" data-lightbox-alt="Relatório de IA de setembro com receitas R$ 8.000, despesas R$ 3.949, investimentos R$ 1.000 e saldo R$ 3.051">
+              <img src="src/assets/360-finance-ai/ia-relatorio.png" alt="Relatório de IA de setembro com receitas R$ 8.000, despesas R$ 3.949, investimentos R$ 1.000 e saldo R$ 3.051" loading="lazy">
+            </button>
+            <figcaption>
+              <strong>O número bate.</strong> Receitas R$ 8.000, despesas R$ 3.949, investimentos R$ 1.000, saldo R$ 3.051. Moradia em 63%. O mesmo recorte do dashboard de setembro. Se divergisse, o relatório estaria errado, não "criativo".
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section" id="proximos">
+      <div class="container case-prose">
+        <h2 class="section-title reveal">O que isso prova para quem contrata</h2>
+        <p class="reveal">Não é uma tela estática. É um ciclo fechado: login, dado persistido, pagamento, permissão e um texto de IA que dá para auditar. Os problemas pouco glamorosos (Decimal no client, <span class="case-mono">.env</span>, webhook de produção) estão resolvidos o suficiente para o produto subir na Vercel e o repositório ficar aberto para review.</p>
+        <div class="hero__actions reveal">
+          <a href="https://360-finance-ai.vercel.app" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+            Ver demo
+            <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+          </a>
+          <a href="https://github.com/Ricardoleaom/360Finance_AI" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">
+            <i class="ph ph-github-logo" aria-hidden="true"></i>
+            Código no GitHub
+          </a>
+          <a href="index.html#projetos" class="btn btn--secondary">Voltar aos projetos</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>&copy; <span id="ano-atual">2026</span> Ricardo Leão. Todos os direitos reservados.</p>
+      <div class="site-footer__socials">
+        <a href="https://www.linkedin.com/in/ricardo-leao-machado/" target="_blank" rel="noopener noreferrer">
+          <i class="ph ph-linkedin-logo" aria-hidden="true"></i>
+          LinkedIn
+        </a>
+        <a href="https://github.com/Ricardoleaom" target="_blank" rel="noopener noreferrer">
+          <i class="ph ph-github-logo" aria-hidden="true"></i>
+          GitHub
+        </a>
+        <a href="mailto:ricardoleaom@gmail.com">
+          <i class="ph ph-envelope-simple" aria-hidden="true"></i>
+          Email
+        </a>
+        <a href="https://wa.me/5531984129779" target="_blank" rel="noopener noreferrer">
+          <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Imagem ampliada">
+    <button type="button" class="lightbox__close" data-lightbox-close aria-label="Fechar imagem">
+      <i class="ph ph-x" aria-hidden="true"></i>
+    </button>
+    <img class="lightbox__img" alt="">
+  </dialog>
+
+  <script src="src/js/main.js?v=20260901"></script>
+</body>
+</html>
