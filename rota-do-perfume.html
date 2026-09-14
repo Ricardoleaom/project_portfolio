@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rota do Perfume | Ricardo Leão</title>
-  <meta name="description" content="Estudo de caso: lakehouse na Databricks do CSV sujo até o app que o diretor usa para decidir quem ligar na segunda-feira. Conversão real de 41,7% contra 10,1% ligando às cegas.">
+  <title>Rota do Perfume: lakehouse na Databricks | Ricardo Leão</title>
+  <meta name="description" content="Estudo de caso: lakehouse na Databricks do CSV sujo ao app que decide quem ligar na segunda. Conversão real de 41,7% contra 10,1% ligando às cegas.">
   <meta name="author" content="Ricardo Leão">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="theme-color" content="#0A0A0A">
@@ -15,7 +15,7 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:url" content="https://ricardoleaom.github.io/project_portfolio/rota-do-perfume.html">
   <meta property="og:title" content="Rota do Perfume | Estudo de caso Databricks — Ricardo Leão">
-  <meta property="og:description" content="Estudo de caso: lakehouse na Databricks do CSV sujo até o app que o diretor usa para decidir quem ligar na segunda-feira. Conversão real de 41,7% contra 10,1% ligando às cegas.">
+  <meta property="og:description" content="Estudo de caso: lakehouse na Databricks do CSV sujo ao app que decide quem ligar na segunda. Conversão real de 41,7% contra 10,1% ligando às cegas.">
   <meta property="og:image" content="https://ricardoleaom.github.io/project_portfolio/src/assets/og-rota-do-perfume.png?v=20260831">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
@@ -24,7 +24,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rota do Perfume | Estudo de caso Databricks — Ricardo Leão">
-  <meta name="twitter:description" content="Estudo de caso: lakehouse na Databricks do CSV sujo até o app que o diretor usa para decidir quem ligar na segunda-feira. Conversão real de 41,7% contra 10,1% ligando às cegas.">
+  <meta name="twitter:description" content="Estudo de caso: lakehouse na Databricks do CSV sujo ao app que decide quem ligar na segunda. Conversão real de 41,7% contra 10,1% ligando às cegas.">
   <meta name="twitter:image" content="https://ricardoleaom.github.io/project_portfolio/src/assets/og-rota-do-perfume.png?v=20260831">
   <meta name="twitter:image:alt" content="Cartão do estudo de caso Rota do Perfume: lakehouse na Databricks com 41,7% de conversão na fila priorizada.">
 
@@ -34,22 +34,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
-  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"></noscript>
 
-  <link rel="stylesheet" href="src/css/styles.css?v=20260831">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="src/css/styles.css?v=20260914">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Rota do Perfume — do CSV sujo ao app que decide quem ligar",
-    "description": "Estudo de caso: lakehouse na Databricks do CSV sujo até o app que o diretor usa para decidir quem ligar na segunda-feira. Conversão real de 41,7% contra 10,1% ligando às cegas.",
+    "description": "Estudo de caso: lakehouse na Databricks do CSV sujo ao app que decide quem ligar na segunda. Conversão real de 41,7% contra 10,1% ligando às cegas.",
     "image": "https://ricardoleaom.github.io/project_portfolio/src/assets/og-rota-do-perfume.png",
     "inLanguage": "pt-BR",
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://ricardoleaom.github.io/project_portfolio/rota-do-perfume.html" },
-    "author": { "@id": "https://ricardoleaom.github.io/project_portfolio/#ricardo-leao" },
-    "publisher": { "@id": "https://ricardoleaom.github.io/project_portfolio/#ricardo-leao" },
+    "datePublished": "2026-08-31T17:14:28-03:00",
+    "dateModified": "2026-09-14",
+    "author": { "@type": "Person", "@id": "https://ricardoleaom.github.io/project_portfolio/#ricardo-leao", "name": "Ricardo Leão", "url": "https://ricardoleaom.github.io/project_portfolio/" },
+    "publisher": { "@type": "Person", "@id": "https://ricardoleaom.github.io/project_portfolio/#ricardo-leao", "name": "Ricardo Leão", "url": "https://ricardoleaom.github.io/project_portfolio/" },
     "about": ["Databricks", "Lakehouse", "Engenharia de Dados", "Análise de Dados"]
   }
   </script>
@@ -170,7 +174,7 @@
         <div class="case-gallery">
           <figure class="case-shot case-shot--wide reveal">
             <button type="button" class="case-shot__trigger" data-lightbox="src/assets/rota-do-perfume/semana.jpg" data-lightbox-alt="App Rota do Perfume na aba A semana, com KPIs da fila e a tabela de clientes a ligar">
-              <img src="src/assets/rota-do-perfume/semana.jpg" alt="App Rota do Perfume na aba A semana, com KPIs da fila e a tabela de clientes a ligar" loading="lazy">
+              <img src="src/assets/rota-do-perfume/semana.jpg" width="1024" height="521" decoding="async" alt="App Rota do Perfume na aba A semana, com KPIs da fila e a tabela de clientes a ligar" loading="lazy">
             </button>
             <figcaption>
               <strong>A semana.</strong> 200 contatos, receita esperada de R$ 559 mil, conversão prevista de 42% contra 10,1% ligando às cegas. A fila traz chance, motivo da ligação, o que oferecer (com estoque) e o registro do desfecho: vendeu, vai pensar, sem interesse, não atendeu.
@@ -179,7 +183,7 @@
 
           <figure class="case-shot reveal">
             <button type="button" class="case-shot__trigger" data-lightbox="src/assets/rota-do-perfume/acompanhamento.jpg" data-lightbox-alt="Aba Acompanhamento com conversão real de 41,7% contra 41,5% prevista pelo modelo e 10,1% ligando às cegas">
-              <img src="src/assets/rota-do-perfume/acompanhamento.jpg" alt="Aba Acompanhamento com conversão real de 41,7% contra 41,5% prevista pelo modelo e 10,1% ligando às cegas" loading="lazy">
+              <img src="src/assets/rota-do-perfume/acompanhamento.jpg" width="1024" height="473" decoding="async" alt="Aba Acompanhamento com conversão real de 41,7% contra 41,5% prevista pelo modelo e 10,1% ligando às cegas" loading="lazy">
             </button>
             <figcaption>
               <strong>O modelo está se confirmando?</strong> 41,7% real, 41,5% previsto, 10,1% baseline. A amostra ainda é pequena (intervalo de confiança de 19,3% a 68,0%). O painel trata o alinhamento como sinal, não como prova fechada.
@@ -188,7 +192,7 @@
 
           <figure class="case-shot reveal">
             <button type="button" class="case-shot__trigger" data-lightbox="src/assets/rota-do-perfume/acompanhamento-vendedores.jpg" data-lightbox-alt="Gráfico de barras com fila versus ligações trabalhadas por vendedor e tabela de desfecho">
-              <img src="src/assets/rota-do-perfume/acompanhamento-vendedores.jpg" alt="Gráfico de barras com fila versus ligações trabalhadas por vendedor e tabela de desfecho" loading="lazy">
+              <img src="src/assets/rota-do-perfume/acompanhamento-vendedores.jpg" width="1024" height="502" decoding="async" alt="Gráfico de barras com fila versus ligações trabalhadas por vendedor e tabela de desfecho" loading="lazy">
             </button>
             <figcaption>
               <strong>Quem tem carteira grande está trabalhando ela?</strong> Os 12 vendedores com mais contatos na fila, lado a lado com o que já foi ligado. O agrupamento é por ID, não só por nome, para não colidir homônimos.
@@ -197,7 +201,7 @@
 
           <figure class="case-shot case-shot--wide reveal">
             <button type="button" class="case-shot__trigger" data-lightbox="src/assets/rota-do-perfume/perguntar.jpg" data-lightbox-alt="Aba Perguntar do app, com o Genie listando os cinco próximos clientes a ligar">
-              <img src="src/assets/rota-do-perfume/perguntar.jpg" alt="Aba Perguntar do app, com o Genie listando os cinco próximos clientes a ligar" loading="lazy">
+              <img src="src/assets/rota-do-perfume/perguntar.jpg" width="1024" height="510" decoding="async" alt="Aba Perguntar do app, com o Genie listando os cinco próximos clientes a ligar" loading="lazy">
             </button>
             <figcaption>
               <strong>Perguntar.</strong> Linguagem natural sobre a fila, o modelo e os clientes. A consulta roda com as permissões do Unity Catalog de quem pergunta. O SQL gerado fica visível para conferência antes de levar o número para a reunião.
@@ -215,7 +219,7 @@
         <div class="case-gallery">
           <figure class="case-shot reveal">
             <button type="button" class="case-shot__trigger" data-lightbox="src/assets/rota-do-perfume/genie-ligacoes.jpg" data-lightbox-alt="Genie no Databricks respondendo quantas ligações foram registradas e quantas viraram pedido">
-              <img src="src/assets/rota-do-perfume/genie-ligacoes.jpg" alt="Genie no Databricks respondendo quantas ligações foram registradas e quantas viraram pedido" loading="lazy">
+              <img src="src/assets/rota-do-perfume/genie-ligacoes.jpg" width="1024" height="459" decoding="async" alt="Genie no Databricks respondendo quantas ligações foram registradas e quantas viraram pedido" loading="lazy">
             </button>
             <figcaption>
               <strong>Quantas ligações já foram registradas?</strong> 12 ligações, 5 viraram pedido, 41,67% de conversão, com a distribuição por status (vendeu, não atendeu, vai pensar, sem interesse).
@@ -224,7 +228,7 @@
 
           <figure class="case-shot reveal">
             <button type="button" class="case-shot__trigger" data-lightbox="src/assets/rota-do-perfume/genie-vendedor.jpg" data-lightbox-alt="Genie no Databricks mostrando Débora Souza como a vendedora que mais ligou, com 4 chamadas">
-              <img src="src/assets/rota-do-perfume/genie-vendedor.jpg" alt="Genie no Databricks mostrando Débora Souza como a vendedora que mais ligou, com 4 chamadas" loading="lazy">
+              <img src="src/assets/rota-do-perfume/genie-vendedor.jpg" width="1024" height="461" decoding="async" alt="Genie no Databricks mostrando Débora Souza como a vendedora que mais ligou, com 4 chamadas" loading="lazy">
             </button>
             <figcaption>
               <strong>Qual vendedor mais ligou até agora?</strong> Débora Souza, com 4 ligações registradas. O gráfico compara com Henrique Oliveira (3). A pergunta de gestão cai no mesmo dado da fila.
@@ -242,7 +246,7 @@
         <div class="case-gallery">
           <figure class="case-shot reveal">
             <button type="button" class="case-shot__trigger" data-lightbox="src/assets/rota-do-perfume/overview.jpg" data-lightbox-alt="Overview do Databricks App rotaperfume-direcao em execução, com warehouse serverless e espaço Genie ligados">
-              <img src="src/assets/rota-do-perfume/overview.jpg" alt="Overview do Databricks App rotaperfume-direcao em execução, com warehouse serverless e espaço Genie ligados" loading="lazy">
+              <img src="src/assets/rota-do-perfume/overview.jpg" width="1024" height="456" decoding="async" alt="Overview do Databricks App rotaperfume-direcao em execução, com warehouse serverless e espaço Genie ligados" loading="lazy">
             </button>
             <figcaption>
               <strong>Overview.</strong> App em execução, compute ativo, origem em <span class="case-mono">.bundle</span>. Recursos ligados: SQL Warehouse serverless e o espaço Genie Rota do Perfume - Direção.
@@ -251,7 +255,7 @@
 
           <figure class="case-shot reveal">
             <button type="button" class="case-shot__trigger" data-lightbox="src/assets/rota-do-perfume/insights.jpg" data-lightbox-alt="Aba Insights do Databricks App com 100% de uptime e zero incidentes nos últimos sete dias">
-              <img src="src/assets/rota-do-perfume/insights.jpg" alt="Aba Insights do Databricks App com 100% de uptime e zero incidentes nos últimos sete dias" loading="lazy">
+              <img src="src/assets/rota-do-perfume/insights.jpg" width="1024" height="470" decoding="async" alt="Aba Insights do Databricks App com 100% de uptime e zero incidentes nos últimos sete dias" loading="lazy">
             </button>
             <figcaption>
               <strong>Insights.</strong> 100% de uptime no período, zero incidentes. Observabilidade do app no mesmo workspace em que o dado vive.
@@ -308,6 +312,6 @@
     <img class="lightbox__img" alt="">
   </dialog>
 
-  <script src="src/js/main.js?v=20260831"></script>
+  <script src="src/js/main.js?v=20260914"></script>
 </body>
 </html>

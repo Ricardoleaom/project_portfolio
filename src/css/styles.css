@@ -846,6 +846,7 @@ a.about__meta-item:hover {
 }
 
 .formation-card__title {
+  margin: 0;
   color: var(--color-text);
   font-size: 1rem;
   font-weight: 600;
@@ -932,20 +933,28 @@ a.about__meta-item:hover {
 }
 
 /* ---------- Scroll Reveal ---------- */
-.reveal {
+/* Icon fonts load without blocking render: reserve the glyph box so nothing shifts when they arrive */
+.ph,
+.ph-duotone {
+  display: inline-block;
+  width: 1em;
+}
+
+/* Only hide reveal targets when JS is running, so the content stays visible without it */
+.js .reveal {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity var(--duration-base) var(--ease-standard),
               transform var(--duration-base) var(--ease-standard);
 }
 
-.reveal.is-visible {
+.js .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
+  .js .reveal {
     opacity: 1;
     transform: none;
   }
