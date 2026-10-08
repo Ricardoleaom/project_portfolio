@@ -317,6 +317,13 @@
                   >
                 </li>
                 <li>
+                  <strong>Terraform</strong>
+                  <span
+                    >Infraestrutura como código na AWS e Azure, com variáveis,
+                    outputs e state remoto.</span
+                  >
+                </li>
+                <li>
                   <strong>Infraestrutura</strong>
                   <span
                     >Linux, TCP/IP, DNS, backup e disponibilidade de
@@ -346,6 +353,13 @@
                   <strong>Full stack</strong>
                   <span
                     >TypeScript, Next.js, Node.js, Prisma e PostgreSQL.</span
+                  >
+                </li>
+                <li>
+                  <strong>Go</strong>
+                  <span
+                    >Fundamentos da linguagem, concorrência com goroutines e
+                    channels, e testes automatizados.</span
                   >
                 </li>
                 <li>
@@ -392,6 +406,27 @@
               </div>
               <h3 class="tech-card__title">Segurança aplicada</h3>
               <ul class="tech-card__list">
+                <li>
+                  <strong>SOC N1</strong>
+                  <span
+                    >Triagem de logs (Event Viewer, Sysmon) e correlação em
+                    Wazuh, Splunk e Graylog.</span
+                  >
+                </li>
+                <li>
+                  <strong>Threat Intel</strong>
+                  <span
+                    >MITRE ATT&amp;CK, IOCs e OSINT com VirusTotal e
+                    AbuseIPDB.</span
+                  >
+                </li>
+                <li>
+                  <strong>Scripting em segurança</strong>
+                  <span
+                    >Bash para automação: enumeração com Nmap e geração de
+                    hashes para cadeia de custódia.</span
+                  >
+                </li>
                 <li>
                   <strong>Conformidade</strong>
                   <span
@@ -548,6 +583,46 @@
                     <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
                   </a>
                 </div>
+              </div>
+            </article>
+
+            <article class="project-card project-card--featured reveal">
+              <div class="project-card__media">
+                <img
+                  src="src/assets/net-recon-cli/demo.gif"
+                  alt="Terminal executando a CLI net-recon-cli para consultar IP e mapear servidores NS de um domínio"
+                  width="760"
+                  height="404"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="project-card__body">
+                <span class="tag">Backend / CLI</span>
+                <h3 class="project-card__title">Net Recon CLI</h3>
+                <p class="project-card__desc">
+                  CLI em Go para exploração de redes: consulta IPs e mapeia
+                  servidores NS de domínios. As consultas DNS usam
+                  context.WithTimeout para não travar o terminal em caso de
+                  falha de rede, e o parse de IPv4/IPv6 é coberto por testes
+                  table-driven.
+                </p>
+                <div class="chip-row">
+                  <span class="chip">Go</span>
+                  <span class="chip">CLI</span>
+                  <span class="chip">DNS</span>
+                  <span class="chip">urfave/cli</span>
+                  <span class="chip">Table-Driven Tests</span>
+                </div>
+                <a
+                  href="https://github.com/Ricardoleaom/net-recon-cli"
+                  class="project-card__link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Código no GitHub
+                  <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+                </a>
               </div>
             </article>
 
@@ -831,9 +906,17 @@
             <article class="formation-card reveal">
               <span class="formation-card__label">Treinamento</span>
               <h3 class="formation-card__title">
-                SOC Analyst Fundamentals
-                <span>(Hackers Hive - Em andamento)</span>
+                SOC Analyst Fundamentals <span>(Hackers Hive - Concluído)</span>
               </h3>
+              <a
+                class="credential-link"
+                href="https://academy.hackershive.io/verificar/3vNY63BN6V/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver credencial
+                <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+              </a>
             </article>
             <article class="formation-card reveal">
               <span class="formation-card__label">Graduação</span>
