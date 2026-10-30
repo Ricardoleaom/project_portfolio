@@ -151,7 +151,9 @@
         "knowsAbout": [
           "Amazon Web Services",
           "Cloud Computing",
+          "Go",
           "TypeScript",
+          "Node.js",
           "Next.js",
           "PostgreSQL",
           "Databricks",
@@ -352,14 +354,15 @@
                 <li>
                   <strong>Full stack</strong>
                   <span
-                    >TypeScript, Next.js, Node.js, Prisma e PostgreSQL.</span
+                    >TypeScript, Next.js, Node.js com Fastify, Prisma, Drizzle e
+                    PostgreSQL.</span
                   >
                 </li>
                 <li>
                   <strong>Go</strong>
                   <span
-                    >Fundamentos da linguagem, concorrência com goroutines e
-                    channels, e testes automatizados.</span
+                    >Serviços HTTP com PostgreSQL e filas, concorrência,
+                    idempotência, testes de propriedade e de carga com k6.</span
                   >
                 </li>
                 <li>
@@ -451,6 +454,70 @@
           <h2 class="section-title reveal">Projetos</h2>
 
           <div class="projects-grid">
+            <article class="project-card project-card--featured reveal">
+              <div class="project-card__media project-card__media--cover">
+                <img
+                  src="src/assets/go-high-load-wallet/load-lab.webp"
+                  alt="Load lab do console do wallet: 3.000 requisições enviadas e concluídas, zero erros e resultado consistente nas 20 carteiras conferidas"
+                  width="1345"
+                  height="985"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="project-card__body">
+                <span class="tag">Backend / Alta carga</span>
+                <h3 class="project-card__title">Go High-Load Wallet</h3>
+                <p class="project-card__desc">
+                  Carteira em Go que movimenta saldos por HTTP e fila SQS sem
+                  abrir mão das garantias: dinheiro em inteiros, idempotência
+                  por chave, ledger append-only e outbox transacional, checados
+                  com teste de propriedade e de linearizabilidade. Cada fase é
+                  medida com k6: 392 req/s com p99 de 30 ms e zero erros 5xx num
+                  notebook de 4 vCPUs. Um console em React acompanha a API ao
+                  vivo e roda carga que confere o dinheiro no final.
+                </p>
+                <div class="chip-row">
+                  <span class="chip">Go</span>
+                  <span class="chip">PostgreSQL</span>
+                  <span class="chip">SQS</span>
+                  <span class="chip">OAuth2 / Keycloak</span>
+                  <span class="chip">k6</span>
+                  <span class="chip">Grafana</span>
+                  <span class="chip">React</span>
+                </div>
+                <div class="project-card__links">
+                  <a
+                    href="https://github.com/Ricardoleaom/go-high-load-wallet"
+                    class="project-card__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Código no GitHub
+                    <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    href="https://github.com/Ricardoleaom/go-high-load-wallet/tree/master/docs/benchmarks"
+                    class="project-card__link project-card__link--muted"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Benchmarks
+                    <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    href="https://github.com/Ricardoleaom/go-high-load-wallet-web"
+                    class="project-card__link project-card__link--muted"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Console web
+                    <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+
             <article class="project-card project-card--featured reveal">
               <div class="project-card__media project-card__media--cover">
                 <img
@@ -616,6 +683,86 @@
                 </div>
                 <a
                   href="https://github.com/Ricardoleaom/net-recon-cli"
+                  class="project-card__link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Código no GitHub
+                  <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card project-card--secondary reveal">
+              <div class="project-card__media">
+                <img
+                  src="src/assets/apinode/docs.webp"
+                  alt="Documentação OpenAPI da API de Cursos no Scalar, com o endpoint de criação de curso, suas validações e a resposta 409"
+                  width="1280"
+                  height="720"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="project-card__body">
+                <span class="tag">Backend / Segurança</span>
+                <h3 class="project-card__title">API de Cursos</h3>
+                <p class="project-card__desc">
+                  API REST em Fastify com JWT e controle de acesso por perfil. O
+                  login não revela quais e-mails existem, 401 e 403 são
+                  separados e 22 testes de integração rodam contra PostgreSQL. O
+                  CI sobe a imagem Docker e testa a API de verdade.
+                </p>
+                <div class="chip-row">
+                  <span class="chip">Node.js</span>
+                  <span class="chip">Fastify</span>
+                  <span class="chip">TypeScript</span>
+                  <span class="chip">PostgreSQL</span>
+                  <span class="chip">JWT</span>
+                  <span class="chip">Docker</span>
+                </div>
+                <a
+                  href="https://github.com/Ricardoleaom/apinode"
+                  class="project-card__link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Código no GitHub
+                  <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card project-card--secondary reveal">
+              <div class="project-card__media">
+                <img
+                  src="src/assets/solid-masterclass-api/testes.webp"
+                  alt="Terminal com a suíte de testes do solid-masterclass-api: 22 testes passando em 4 arquivos"
+                  width="1280"
+                  height="720"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="project-card__body">
+                <span class="tag">Arquitetura</span>
+                <h3 class="project-card__title">SOLID Masterclass API</h3>
+                <p class="project-card__desc">
+                  Cadastro de usuário para praticar SOLID: o caso de uso só
+                  conhece interfaces, os canais de notificação são estratégias
+                  intercambiáveis e o banco garante o e-mail único mesmo com
+                  requisições simultâneas. O caso de uso é testado sem banco.
+                </p>
+                <div class="chip-row">
+                  <span class="chip">TypeScript</span>
+                  <span class="chip">Fastify</span>
+                  <span class="chip">Drizzle</span>
+                  <span class="chip">SOLID</span>
+                  <span class="chip">Strategy</span>
+                  <span class="chip">Vitest</span>
+                </div>
+                <a
+                  href="https://github.com/Ricardoleaom/solid-masterclass-api"
                   class="project-card__link"
                   target="_blank"
                   rel="noopener noreferrer"
