@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página não encontrada | Ricardo Leão</title>
+  <title>Página não encontrada · Page not found | Ricardo Leão</title>
   <meta name="robots" content="noindex, follow">
   <meta name="theme-color" content="#0A0A0A">
 
@@ -17,8 +17,24 @@
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"></noscript>
 
-  <script>document.documentElement.classList.add('js');</script>
-  <link rel="stylesheet" href="src/css/styles.css?v=20261103">
+  <script>
+    document.documentElement.classList.add('js');
+    // O GitHub Pages serve esta página em qualquer endereço inexistente, inclusive dentro de /en/.
+    // A base aponta os caminhos relativos para a raiz do site. CSS e JS entram por script,
+    // depois da base: uma tag estática seria pedida antes, no caminho errado.
+    (function () {
+      var base = document.createElement('base');
+      base.href = location.pathname.indexOf('/project_portfolio/') === 0 ? '/project_portfolio/' : '/';
+      document.head.appendChild(base);
+
+      var css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = 'src/css/styles.css?v=20261103b';
+      css.setAttribute('blocking', 'render');
+      document.head.appendChild(css);
+    })();
+  </script>
+  <noscript><link rel="stylesheet" href="src/css/styles.css?v=20261103b"></noscript>
 </head>
 <body data-page="case">
   <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo</a>
@@ -39,6 +55,10 @@
       </nav>
 
       <div class="site-header__actions">
+        <nav class="lang-switch" aria-label="Idioma">
+          <a href="index.html" class="lang-switch__link" hreflang="pt-BR" lang="pt-BR"><span aria-hidden="true">PT</span><span class="visually-hidden">Português</span></a>
+          <a href="en/" class="lang-switch__link" hreflang="en" lang="en"><span aria-hidden="true">EN</span><span class="visually-hidden">English</span></a>
+        </nav>
         <a href="https://wa.me/5531984129779" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Contato</a>
         <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menu de navegação">
           <i class="ph ph-list" aria-hidden="true"></i>
@@ -53,12 +73,13 @@
         <p class="eyebrow reveal">Erro 404</p>
         <h1 class="case-hero__title reveal">Página não encontrada</h1>
         <p class="case-hero__lead reveal">Este endereço mudou ou não existe mais. Todos os projetos estão na página inicial.</p>
+        <p class="case-hero__lead reveal" lang="en">Page not found. This address has changed or no longer exists. All projects are on the home page.</p>
         <div class="hero__actions reveal">
           <a href="index.html#projetos" class="btn btn--primary">
             Ver projetos
             <i class="ph ph-arrow-right" aria-hidden="true"></i>
           </a>
-          <a href="index.html" class="btn btn--secondary">Página inicial</a>
+          <a href="en/#projects" class="btn btn--secondary" lang="en">View projects in English</a>
         </div>
       </div>
     </section>
@@ -88,6 +109,12 @@
     </div>
   </footer>
 
-  <script src="src/js/main.js?v=20260914"></script>
+  <script>
+    (function () {
+      var js = document.createElement('script');
+      js.src = 'src/js/main.js?v=20260914';
+      document.body.appendChild(js);
+    })();
+  </script>
 </body>
 </html>
