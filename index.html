@@ -105,7 +105,7 @@
     <script>
       document.documentElement.classList.add("js");
     </script>
-    <link rel="stylesheet" href="src/css/styles.css?v=20260914" />
+    <link rel="stylesheet" href="src/css/styles.css?v=20261103" />
 
     <script type="application/ld+json">
       {
@@ -152,6 +152,8 @@
           "Amazon Web Services",
           "Cloud Computing",
           "Go",
+          "Java",
+          "Python",
           "TypeScript",
           "Node.js",
           "Next.js",
@@ -366,6 +368,13 @@
                   >
                 </li>
                 <li>
+                  <strong>Java e Python</strong>
+                  <span
+                    >APIs com Spring Boot e FastAPI, Spring Security e JWT, JPA
+                    e SQLAlchemy, migrações com Flyway e Alembic.</span
+                  >
+                </li>
+                <li>
                   <strong>Produto na nuvem</strong>
                   <span
                     >Auth, pagamentos, Server Actions e deploy na Vercel.
@@ -519,6 +528,50 @@
             </article>
 
             <article class="project-card project-card--featured reveal">
+              <div class="project-card__media project-card__media--terminal">
+                <img
+                  src="src/assets/vuln-management-api/vulnerabilidade-critica.webp"
+                  alt="Terminal com o registro da CVE-2021-44228 com CVSS 10.0: a API devolve severidade CRITICAL e prazo de 7 dias, e recusa com 409 a mesma CVE aberta de novo no mesmo ativo"
+                  width="1100"
+                  height="920"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="project-card__body">
+                <span class="tag">Segurança / Backend Java</span>
+                <h3 class="project-card__title">Vuln Management API</h3>
+                <p class="project-card__desc">
+                  API em Java 21 e Spring Boot que organiza o ciclo de correção
+                  de vulnerabilidades: a nota CVSS define a severidade e o
+                  prazo, cada perfil só faz a sua parte do fluxo (quem corrige
+                  não verifica), a mesma CVE não abre duas vezes no mesmo ativo
+                  e cada mudança de status vai para um histórico de auditoria.
+                  Login com JWT, limite de tentativas por IP e testes de
+                  integração com Testcontainers.
+                </p>
+                <div class="chip-row">
+                  <span class="chip">Java 21</span>
+                  <span class="chip">Spring Boot</span>
+                  <span class="chip">Spring Security</span>
+                  <span class="chip">PostgreSQL</span>
+                  <span class="chip">Flyway</span>
+                  <span class="chip">Testcontainers</span>
+                  <span class="chip">Docker</span>
+                </div>
+                <a
+                  href="https://github.com/Ricardoleaom/vuln-management-api"
+                  class="project-card__link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Código no GitHub
+                  <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card project-card--featured reveal">
               <div class="project-card__media project-card__media--cover">
                 <img
                   src="src/assets/360-finance-ai/dashboard.webp"
@@ -568,6 +621,50 @@
                     <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
                   </a>
                 </div>
+              </div>
+            </article>
+
+            <article class="project-card project-card--featured reveal">
+              <div class="project-card__media project-card__media--terminal">
+                <img
+                  src="src/assets/ticket-triage-api/triagem.webp"
+                  alt="Terminal com a abertura de um chamado sobre a VPN fora do ar: a API classifica como rede e prioridade crítica, com SLA de 4 horas, e responde 404 a outro solicitante que tenta abrir o chamado"
+                  width="1100"
+                  height="920"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="project-card__body">
+                <span class="tag">Backend / IA aplicada</span>
+                <h3 class="project-card__title">Ticket Triage API</h3>
+                <p class="project-card__desc">
+                  API de chamados em FastAPI que faz a triagem sozinha:
+                  categoria, prioridade e SLA definidos pelo Claude ou, se a IA
+                  falhar, por palavras-chave, sem nunca deixar de abrir o
+                  chamado. O texto do usuário vai para a IA como dado, com
+                  defesas contra prompt injection, e um relatório mede o
+                  cumprimento de SLA e quantas triagens precisaram de correção.
+                  102 testes com Pytest.
+                </p>
+                <div class="chip-row">
+                  <span class="chip">Python</span>
+                  <span class="chip">FastAPI</span>
+                  <span class="chip">PostgreSQL</span>
+                  <span class="chip">SQLAlchemy</span>
+                  <span class="chip">Claude API</span>
+                  <span class="chip">Pytest</span>
+                  <span class="chip">Docker</span>
+                </div>
+                <a
+                  href="https://github.com/Ricardoleaom/ticket-triage-api"
+                  class="project-card__link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Código no GitHub
+                  <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+                </a>
               </div>
             </article>
 

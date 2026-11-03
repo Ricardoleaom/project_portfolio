@@ -618,6 +618,11 @@ button:focus-visible {
   object-position: top center;
 }
 
+/* Prints de terminal: o fundo da mídia acompanha o do terminal. */
+.project-card__media--terminal {
+  background: var(--color-surface);
+}
+
 .project-card:hover .project-card__media img {
   transform: scale(1.04);
 }
